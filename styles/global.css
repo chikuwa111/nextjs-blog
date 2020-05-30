@@ -1,33 +1,34 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+* {
+  @apply box-border;
+}
 
 html,
 body {
   @apply p-0 m-0 font-sans leading-relaxed text-lg;
 }
 
-* {
-  @apply box-border;
-}
-
 a {
   @apply no-underline text-blue-600;
-}
 
-a:hover {
-  @apply underline;
+  &:hover {
+    @apply underline;
+  }
 }
 
 img {
   @apply max-w-full block;
 }
 
-p,
-article ul {
+p {
   @apply my-4;
 }
 
-article li {
-  @apply list-disc list-inside;
+article {
+  ul {
+    @apply my-4 pl-6;
+  }
+
+  li {
+    @apply list-disc;
+  }
 }
