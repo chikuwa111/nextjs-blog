@@ -1,25 +1,19 @@
 .container {
-  max-width: 36rem;
-  padding: 0 1rem;
-  margin: 3rem auto 6rem;
+  @apply max-w-xl px-0 py-4 mt-12 mb-24 mx-auto;
 }
 
 .header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  @apply flex flex-col items-center;
 }
 
 .headerImage {
-  width: 6rem;
-  height: 6rem;
+  @apply w-24 h-24;
 }
 
 .headerHomeImage {
-  width: 8rem;
-  height: 8rem;
+  @apply w-32 h-32;
 }
 
 .backToHome {
-  margin: 3rem 0 0;
+  @apply mt-12 mx-0 mb-0;
 }
