@@ -3,8 +3,8 @@ import { GetStaticProps } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
 
-import { Date } from '@/components/date';
-import { Layout, SITE_TITLE } from '@/components/layout';
+import { Date } from '@/components/Date';
+import { Layout, SITE_TITLE } from '@/components/Layout';
 import {
   headingMd,
   padding1px,
