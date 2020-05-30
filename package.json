@@ -6,8 +6,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint --fix .",
-    "prettier": "prettier --write ."
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix .",
+    "prettier": "prettier .",
+    "prettier:fix": "prettier --write ."
   },
   "dependencies": {
     "date-fns": "^2.14.0",
