@@ -2,6 +2,7 @@ import cn from 'classnames';
 import Head from 'next/head';
 import Link from 'next/link';
 
+import { SITE_TITLE } from '@/constants/setting';
 import {
   borderCircle,
   heading2Xl,
@@ -10,7 +11,6 @@ import {
 } from '@/constants/style';
 
 const NAME = 'chikuwa111';
-export const SITE_TITLE = 'Next.js Sample Website';
 
 type Props = {
   home?: boolean;

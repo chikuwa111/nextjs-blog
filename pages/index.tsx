@@ -4,7 +4,8 @@ import Head from 'next/head';
 import Link from 'next/link';
 
 import { Date } from '@/components/Date';
-import { Layout, SITE_TITLE } from '@/components/Layout';
+import { Layout } from '@/components/Layout';
+import { SITE_TITLE } from '@/constants/setting';
 import {
   headingMd,
   padding1px,
@@ -30,7 +31,7 @@ export default function Home({ allPostsData }: Props) {
         <title>{SITE_TITLE}</title>
       </Head>
       <section className={cn(headingMd)}>
-        <p>[Your Self Introduction]</p>
+        <p>Chikuwa is paste made of fish meat.</p>
         <p>
           (This is a sample website - you’ll be building a site like this in{' '}
           <a href="https://nextjs.org/learn">our Next.js tutorial</a>.)
