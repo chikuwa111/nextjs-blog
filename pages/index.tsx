@@ -1,42 +1,52 @@
-import Head from 'next/head'
-import Layout, { siteTitle } from '../components/layout'
-import utilStyles from '../styles/utils.module.css'
-import { getSortedPostsData } from '../lib/posts'
-import Link from 'next/link'
-import Date from '../components/date'
-import { GetStaticProps } from 'next'
+import cn from 'classnames';
+import { GetStaticProps } from 'next';
+import Head from 'next/head';
+import Link from 'next/link';
 
-export default function Home({
-  allPostsData
-}: {
+import { Date } from '@/components/Date';
+import { Layout } from '@/components/Layout';
+import { SITE_TITLE } from '@/constants/setting';
+import {
+  headingMd,
+  padding1px,
+  headingLg,
+  list,
+  listItem,
+  lightText,
+} from '@/constants/style';
+import { getSortedPostsData } from '@/lib/posts';
+
+type Props = {
   allPostsData: {
-    date: string
-    title: string
-    id: string
-  }[]
-}) {
+    date: string;
+    title: string;
+    id: string;
+  }[];
+};
+
+export default function Home({ allPostsData }: Props) {
   return (
     <Layout home>
       <Head>
-        <title>{siteTitle}</title>
+        <title>{SITE_TITLE}</title>
       </Head>
-      <section className={utilStyles.headingMd}>
-        <p>[Your Self Introduction]</p>
+      <section className={cn(headingMd)}>
+        <p>Chikuwa is paste made of fish meat.</p>
         <p>
           (This is a sample website - you’ll be building a site like this in{' '}
           <a href="https://nextjs.org/learn">our Next.js tutorial</a>.)
         </p>
       </section>
-      <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
-        <h2 className={utilStyles.headingLg}>Blog</h2>
-        <ul className={utilStyles.list}>
+      <section className={cn(headingMd, padding1px)}>
+        <h2 className={cn(headingLg)}>Blog</h2>
+        <ul className={cn(list)}>
           {allPostsData.map(({ id, date, title }) => (
-            <li className={utilStyles.listItem} key={id}>
+            <li className={cn(listItem)} key={id}>
               <Link href="/posts/[id]" as={`/posts/${id}`}>
                 <a>{title}</a>
               </Link>
               <br />
-              <small className={utilStyles.lightText}>
+              <small className={cn(lightText)}>
                 <Date dateString={date} />
               </small>
             </li>
@@ -44,14 +54,14 @@ export default function Home({
         </ul>
       </section>
     </Layout>
-  )
+  );
 }
 
-export const getStaticProps: GetStaticProps = async () => {
-  const allPostsData = getSortedPostsData()
+export const getStaticProps: GetStaticProps<Props> = async () => {
+  const allPostsData = getSortedPostsData();
   return {
     props: {
-      allPostsData
-    }
-  }
-}
+      allPostsData,
+    },
+  };
+};
