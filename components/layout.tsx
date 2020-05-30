@@ -1,8 +1,13 @@
+import cn from 'classnames';
 import Head from 'next/head';
 import Link from 'next/link';
 
-import styles from './layout.module.css';
-import utilStyles from '@/styles/utils.module.css';
+import {
+  borderCircle,
+  heading2Xl,
+  headingLg,
+  colorInherit,
+} from '@/constants/style';
 
 const NAME = 'chikuwa111';
 export const SITE_TITLE = 'Next.js Sample Website';
@@ -14,7 +19,7 @@ type Props = {
 
 export function Layout({ home, children }: Props) {
   return (
-    <div className={styles.container}>
+    <div className="max-w-xl px-0 py-4 mt-12 mb-24 mx-auto">
       <Head>
         <link rel="icon" href="/favicon.ico" />
         <meta
@@ -30,15 +35,15 @@ export function Layout({ home, children }: Props) {
         <meta name="og:title" content={SITE_TITLE} />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
-      <header className={styles.header}>
+      <header className="flex flex-col items-center">
         {home ? (
           <>
             <img
               src="/images/profile.jpg"
-              className={`${styles.headerHomeImage} ${utilStyles.borderCircle}`}
+              className={cn(borderCircle, 'w-32', 'h-32')}
               alt={NAME}
             />
-            <h1 className={utilStyles.heading2Xl}>{NAME}</h1>
+            <h1 className={cn(heading2Xl)}>{NAME}</h1>
           </>
         ) : (
           <>
@@ -46,14 +51,14 @@ export function Layout({ home, children }: Props) {
               <a>
                 <img
                   src="/images/profile.jpg"
-                  className={`${styles.headerImage} ${utilStyles.borderCircle}`}
+                  className={cn(borderCircle, 'w-24', 'h-24')}
                   alt={NAME}
                 />
               </a>
             </Link>
-            <h2 className={utilStyles.headingLg}>
+            <h2 className={cn(headingLg)}>
               <Link href="/">
-                <a className={utilStyles.colorInherit}>{NAME}</a>
+                <a className={cn(colorInherit)}>{NAME}</a>
               </Link>
             </h2>
           </>
@@ -61,7 +66,7 @@ export function Layout({ home, children }: Props) {
       </header>
       <main>{children}</main>
       {!home && (
-        <div className={styles.backToHome}>
+        <div className="mt-12 mx-0 mb-0">
           <Link href="/">
             <a>← Back to home</a>
           </Link>

@@ -1,10 +1,11 @@
+import cn from 'classnames';
 import { GetStaticProps, GetStaticPaths } from 'next';
 import Head from 'next/head';
 
 import { Date } from '@/components/date';
 import { Layout } from '@/components/layout';
+import { headingXl, lightText } from '@/constants/style';
 import { getAllPostIds, getPostData } from '@/lib/posts';
-import utilStyles from '@/styles/utils.module.css';
 
 type Params = {
   id: string;
@@ -25,8 +26,8 @@ export default function Post({ postData }: Props) {
         <title>{postData.title}</title>
       </Head>
       <article>
-        <h1 className={utilStyles.headingXl}>{postData.title}</h1>
-        <div className={utilStyles.lightText}>
+        <h1 className={cn(headingXl)}>{postData.title}</h1>
+        <div className={cn(lightText)}>
           <Date dateString={postData.date} />
         </div>
         <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
