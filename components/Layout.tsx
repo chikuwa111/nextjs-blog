@@ -3,12 +3,7 @@ import Head from 'next/head';
 import Link from 'next/link';
 
 import { SITE_TITLE } from '@/constants/setting';
-import {
-  borderCircle,
-  heading2Xl,
-  headingLg,
-  colorInherit,
-} from '@/constants/style';
+import { heading2Xl, headingLg } from '@/constants/style';
 
 const NAME = 'chikuwa111';
 
@@ -19,7 +14,7 @@ type Props = {
 
 export function Layout({ home, children }: Props) {
   return (
-    <div className="max-w-xl px-0 py-4 mt-12 mb-24 mx-auto">
+    <div className="max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl mt-12 mb-24 px-4 mx-auto">
       <Head>
         <link rel="icon" href="/favicon.ico" />
         <meta
@@ -38,11 +33,7 @@ export function Layout({ home, children }: Props) {
       <header className="flex flex-col items-center">
         {home ? (
           <>
-            <img
-              src="/images/profile.jpg"
-              className={cn(borderCircle, 'w-32', 'h-32')}
-              alt={NAME}
-            />
+            <img src="/images/profile.jpg" className="w-32 h-32" alt={NAME} />
             <h1 className={cn(heading2Xl)}>{NAME}</h1>
           </>
         ) : (
@@ -51,14 +42,14 @@ export function Layout({ home, children }: Props) {
               <a>
                 <img
                   src="/images/profile.jpg"
-                  className={cn(borderCircle, 'w-24', 'h-24')}
+                  className="w-24 h-24"
                   alt={NAME}
                 />
               </a>
             </Link>
             <h2 className={cn(headingLg)}>
               <Link href="/">
-                <a className={cn(colorInherit)}>{NAME}</a>
+                <a className="text-current">{NAME}</a>
               </Link>
             </h2>
           </>

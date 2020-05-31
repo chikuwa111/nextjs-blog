@@ -6,14 +6,7 @@ import Link from 'next/link';
 import { Date } from '@/components/Date';
 import { Layout } from '@/components/Layout';
 import { SITE_TITLE } from '@/constants/setting';
-import {
-  headingMd,
-  padding1px,
-  headingLg,
-  list,
-  listItem,
-  lightText,
-} from '@/constants/style';
+import { headingMd, headingLg, lightText } from '@/constants/style';
 import { getSortedPostsData } from '@/lib/posts';
 
 type Props = {
@@ -37,11 +30,11 @@ export default function Home({ allPostsData }: Props) {
           <a href="https://nextjs.org/learn">our Next.js tutorial</a>.)
         </p>
       </section>
-      <section className={cn(headingMd, padding1px)}>
+      <section className={cn(headingMd, 'pt-px')}>
         <h2 className={cn(headingLg)}>Blog</h2>
-        <ul className={cn(list)}>
+        <ul className="list-none p-0 m-0">
           {allPostsData.map(({ id, date, title }) => (
-            <li className={cn(listItem)} key={id}>
+            <li className="mt-0 mb-4 mx-0" key={id}>
               <Link href="/posts/[id]" as={`/posts/${id}`}>
                 <a>{title}</a>
               </Link>
