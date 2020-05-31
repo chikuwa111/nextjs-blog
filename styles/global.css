@@ -4,7 +4,7 @@
 
 html,
 body {
-  @apply p-0 m-0 font-sans leading-relaxed text-lg;
+  @apply p-0 m-0 font-sans leading-relaxed;
 }
 
 a {
@@ -24,6 +24,10 @@ p {
 }
 
 article {
+  h1 {
+    @apply text-xl font-bold my-6;
+  }
+
   ul {
     @apply my-4 pl-6;
   }
