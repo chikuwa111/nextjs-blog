@@ -3,7 +3,7 @@ title: 'Next.jsとTailwind CSSに入門しました'
 date: '2020-05-31'
 ---
 
-今週末に Next.js と Tailwind CSS に入門しました。せっかくブログサイトが出来上がったのでテストがてらその記録を残しておきます。
+週末に Next.js と Tailwind CSS に入門しました。せっかくブログサイトが出来上がったので、テストがてら記録を残しておきます。
 
 - [Next.js のチュートリアル](https://nextjs.org/learn/basics/create-nextjs-app)
 - [Tailwind CSS](https://tailwindcss.com/)
@@ -30,7 +30,7 @@ Vercel でデプロイするところまでチュートリアルでやるので�
 
 どうやらチュートリアルのテンプレートの `9.3.5` 時点では入ってなかった機能っぽいです。盲点でした。。
 
-皆さんもチュートリアルからそのまま next で遊ぶときはバージョンに気をつけてください。
+皆さんもチュートリアルからそのまま遊ぶときはバージョンに気をつけてください。
 
 # Tailwind CSS
 
