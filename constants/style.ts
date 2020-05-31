@@ -6,16 +6,6 @@ export const headingXl =
 
 export const headingLg = 'text-2xl leading-normal font-bold mx-0 my-4';
 
-export const headingMd = 'text-xl leading-normal';
-
-export const borderCircle = 'rounded-full';
-
-export const colorInherit = 'text-current';
-
-export const padding1px = 'pt-px';
-
-export const list = 'list-none p-0 m-0';
-
-export const listItem = 'mt-0 mx-0 mb-5';
+export const headingMd = 'text-xl leading-normal mx-0 my-4';
 
 export const lightText = 'text-gray-500';
