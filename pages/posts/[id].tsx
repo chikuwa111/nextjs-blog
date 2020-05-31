@@ -24,6 +24,7 @@ export default function Post({ postData }: Props) {
     <Layout>
       <Head>
         <title>{postData.title}</title>
+        <meta name="og:title" content={postData.title} />
       </Head>
       <article>
         <h1 className={cn(headingXl)}>{postData.title}</h1>
