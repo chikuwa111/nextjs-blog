@@ -24,8 +24,8 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - run: npm ci
-    - run: npm run build
+    - run: yarn install --frozen-lockfile
+    - run: yarn build
 
   lint:
     
@@ -37,8 +37,8 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: '12.x'
-    - run: npm ci
-    - run: npm run lint
+    - run: yarn install
+    - run: yarn lint
 
 
   prettier:
@@ -51,8 +51,8 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: '12.x'
-    - run: npm ci
-    - run: npm run prettier
+    - run: yarn install
+    - run: yarn prettier
 
 
 
@@ -66,5 +66,5 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: '12.x'
-    - run: npm ci
-    - run: npm run typecheck
+    - run: yarn install
+    - run: yarn typecheck
